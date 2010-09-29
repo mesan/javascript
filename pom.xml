@@ -10,6 +10,23 @@
   <name>javascript-testing Maven Webapp</name>
   <url>http://maven.apache.org</url>
 
+  <build>
+    <defaultGoal>install</defaultGoal>
+    <plugins>
+      <plugin>
+        <!-- kompiler som java 1.6 kode -->
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+          <encoding>UTF-8</encoding>
+          <compilerVersion>1.6</compilerVersion>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
   <dependencies>
     <dependency>
       <groupId>org.springframework</groupId>
