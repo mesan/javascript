@@ -1,4 +1,4 @@
-package no.mesan.javascript;
+package javascript;
 
 import org.springframework.stereotype.Controller;
 
