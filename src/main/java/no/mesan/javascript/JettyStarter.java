@@ -1,4 +1,4 @@
-package javascript;
+package no.mesan.javascript;
 
 import org.mortbay.jetty.Connector;
 import org.mortbay.jetty.Server;
