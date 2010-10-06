@@ -24,6 +24,37 @@
           <compilerVersion>1.6</compilerVersion>
         </configuration>
       </plugin>
+      <plugin>
+        <groupId>com.google.code.jsd-maven</groupId>
+        <artifactId>maven-jstestdriver-plugin</artifactId>
+        <version>0.1.8</version> <executions>
+        <execution>
+          <id>run-tests</id>
+          <phase>test</phase>
+          <goals>
+            <goal>test</goal>
+          </goals>
+          <configuration>
+            <debug>false</debug> <arguments>
+            <argument>java</argument>
+            <argument>-jar</argument>
+            <argument>src/test/resources/JsTestDriver-1.2.2.jar</argument>
+            <argument>--config</argument>
+            <argument>src/test/resources/jsTestDriver.conf</argument>
+            <argument>--tests</argument>
+            <argument>all</argument>
+            <argument>--captureConsole</argument>
+            <argument>--verbose</argument>
+            <argument>--port</argument>
+            <argument>5555</argument>
+            <argument>--browser</argument>
+            <argument>C:\Program Files\Mozilla Firefox\firefox.exe</argument>
+            <argument>--reset</argument>
+          </arguments>
+          </configuration>
+        </execution>
+      </executions>
+      </plugin>
     </plugins>
   </build>
 
@@ -74,6 +105,20 @@
       <version>1.8.1</version>
       <scope>test</scope>
     </dependency>
+
+    <dependency>
+      <groupId>com.google.code.jsd-maven</groupId>
+      <artifactId>maven-jstestdriver-plugin</artifactId>
+      <version>0.1.8</version>
+    </dependency>
   </dependencies>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>jsd-maven</id>
+      <name>Java Script Unit Testing using JSTestDriver</name>
+      <url>http://jsd-maven.googlecode.com/svn/trunk/repository/</url>
+    </pluginRepository>
+  </pluginRepositories>
 
 </project>
