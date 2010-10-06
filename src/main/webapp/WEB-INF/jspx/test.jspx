@@ -4,13 +4,13 @@
         xmlns:c="http://java.sun.com/jsp/jstl/core"
         xmlns:form="http://www.springframework.org/tags/form"
         xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+        xmlns:l="urn:jsptagdir:/WEB-INF/tags/layout"
         version="2.1">
 
   <jsp:directive.page contentType="text/html;charset=utf-8"/>
 
-  <html>
-    <head><title>Simple jspx page</title></head>
-    <body>Place content here</body>
-  </html>
+  <l:standard>
+    Test content...
+  </l:standard>
 
 </jsp:root>

@@ -1,0 +1,52 @@
+<jsp:root
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:jsp="http://java.sun.com/JSP/Page"
+        xmlns:c="http://java.sun.com/jsp/jstl/core"
+        xmlns:l="urn:jsptagdir:/WEB-INF/tags/layout"
+        version="2.0">
+
+  <jsp:directive.tag pageEncoding="utf-8"
+                     description="Standard layout"/>
+
+  <jsp:output doctype-system="about:legacy-compat"
+              doctype-root-element="html"
+              omit-xml-declaration="true" />
+
+  <html lang="no">
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+      <title>JavaScript</title>
+      <script type="text/javascript" src="${resroot}/js/jquery-1.4.2.js">//</script>
+      <link type="text/css" rel="stylesheet" href="${resroot}/css/jquery-ui-1.7.1.custom.css"/>
+      <link type="text/css" rel="stylesheet" href="${resroot}/css/stil.css"/>
+      <link type="text/css" rel="stylesheet" href="${resroot}/css/layout.css"/>
+      <link type="text/css" rel="stylesheet" href="${resroot}/css/rangering.css"/>
+      <link type="text/css" rel="stylesheet" href="${resroot}/css/print.css" media="print" />
+      <script type="text/javascript">
+        if (typeof console=="undefined") {
+          console={
+            log:function(A){var B=false;if(B){alert(A)}},
+            trace:function(A){var B=false;if(B){alert(A)}},
+            debug:function(A){var B=false;if(B){alert(A)}}
+          }
+        }
+    </script>
+    </head>
+
+    <body>
+      <div id="side">
+        <div id="header">
+          <h1>JavaScript er morro...</h1>
+        </div>
+        <div id="body">
+          <jsp:doBody/>
+        </div>
+        <div id="footer">
+          Mesan JavaScript miniprosjekt
+        </div>
+      </div>
+    </body>
+  </html>
+
+  </jsp:root>
