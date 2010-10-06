@@ -21,8 +21,6 @@
       <link type="text/css" rel="stylesheet" href="${resroot}/css/jquery-ui-1.7.1.custom.css"/>
       <link type="text/css" rel="stylesheet" href="${resroot}/css/stil.css"/>
       <link type="text/css" rel="stylesheet" href="${resroot}/css/layout.css"/>
-      <link type="text/css" rel="stylesheet" href="${resroot}/css/rangering.css"/>
-      <link type="text/css" rel="stylesheet" href="${resroot}/css/print.css" media="print" />
       <script type="text/javascript">
         if (typeof console=="undefined") {
           console={
