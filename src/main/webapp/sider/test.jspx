@@ -1,0 +1,16 @@
+<jsp:root
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:jsp="http://java.sun.com/JSP/Page"
+        xmlns:c="http://java.sun.com/jsp/jstl/core"
+        xmlns:form="http://www.springframework.org/tags/form"
+        xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+        xmlns:l="urn:jsptagdir:/WEB-INF/tags/layout"
+        version="2.1">
+
+  <jsp:directive.page contentType="text/html;charset=utf-8"/>
+
+  <l:standard title="Test...">
+    Test fra småstatisk fil.....
+  </l:standard>
+
+</jsp:root>

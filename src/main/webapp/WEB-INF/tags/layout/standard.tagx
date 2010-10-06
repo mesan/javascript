@@ -2,26 +2,31 @@
         xmlns="http://www.w3.org/1999/xhtml"
         xmlns:jsp="http://java.sun.com/JSP/Page"
         xmlns:l="urn:jsptagdir:/WEB-INF/tags/layout"
+        xmlns:c="http://java.sun.com/jsp/jstl/core"
         version="2.0">
 
   <jsp:directive.tag pageEncoding="utf-8"
                      description="Standard layout"/>
 
   <jsp:directive.attribute name="title"
-                     description="Tittel som skal brukes"/>
+                           description="Tittel som skal brukes"/>
 
   <jsp:output doctype-system="about:legacy-compat"
               doctype-root-element="html"
-              omit-xml-declaration="true" />
+              omit-xml-declaration="true"/>
+
+
+  <!-- Variabler som kan brukes for å henvise til standard url'er -->
+  <c:set var="root" value="${pageContext.request.contextPath}" scope="application"/>
+  <c:set var="resroot" value="${root}" scope="application"/>
+  <c:set var="sideroot" value="/side" scope="application"/>
 
   <html lang="no">
-    <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
       <title>JavaScript - ${title}</title>
-      <script type="text/javascript" src="${resroot}/js/jquery-1.4.2.js">//</script>
-      <link type="text/css" rel="stylesheet" href="${resroot}/css/jquery-ui-1.7.1.custom.css"/>
-      <link type="text/css" rel="stylesheet" href="${resroot}/css/stil.css"/>
+      <script type="text/javascript" src="${resroot}/js/jQuery-1.4.2.js">//</script>
       <link type="text/css" rel="stylesheet" href="${resroot}/css/layout.css"/>
       <script type="text/javascript">
         if (typeof console=="undefined") {
@@ -32,21 +37,21 @@
           }
         }
     </script>
-    </head>
+  </head>
 
-    <body>
-      <div id="side">
-        <div id="header">
-          <h1>JavaScript er morro...</h1>
-        </div>
-        <div id="body">
-          <jsp:doBody/>
-        </div>
-        <div id="footer">
-          Mesan JavaScript miniprosjekt
-        </div>
-      </div>
-    </body>
+  <body>
+  <div id="side">
+    <div id="header">
+      <h1>JavaScript er morro...</h1>
+    </div>
+    <div id="body">
+      <jsp:doBody/>
+    </div>
+    <div id="footer">
+      Mesan JavaScript miniprosjekt
+    </div>
+  </div>
+  </body>
   </html>
 
-  </jsp:root>
+</jsp:root>
