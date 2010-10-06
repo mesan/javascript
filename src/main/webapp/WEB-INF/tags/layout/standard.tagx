@@ -1,12 +1,14 @@
 <jsp:root
         xmlns="http://www.w3.org/1999/xhtml"
         xmlns:jsp="http://java.sun.com/JSP/Page"
-        xmlns:c="http://java.sun.com/jsp/jstl/core"
         xmlns:l="urn:jsptagdir:/WEB-INF/tags/layout"
         version="2.0">
 
   <jsp:directive.tag pageEncoding="utf-8"
                      description="Standard layout"/>
+
+  <jsp:directive.attribute name="title"
+                     description="Tittel som skal brukes"/>
 
   <jsp:output doctype-system="about:legacy-compat"
               doctype-root-element="html"
@@ -16,7 +18,7 @@
     <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
-      <title>JavaScript</title>
+      <title>JavaScript - ${title}</title>
       <script type="text/javascript" src="${resroot}/js/jquery-1.4.2.js">//</script>
       <link type="text/css" rel="stylesheet" href="${resroot}/css/jquery-ui-1.7.1.custom.css"/>
       <link type="text/css" rel="stylesheet" href="${resroot}/css/stil.css"/>
