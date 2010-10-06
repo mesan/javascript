@@ -10,7 +10,7 @@
   <jsp:directive.page contentType="text/html;charset=utf-8"/>
 
   <l:standard title="Test...">
-    Test fra småstatisk fil.....
+    Tekst fra småstatisk fil.....
   </l:standard>
 
 </jsp:root>

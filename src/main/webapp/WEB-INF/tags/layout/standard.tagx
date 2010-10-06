@@ -23,33 +23,36 @@
 
   <html lang="no">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="utf-8"/>
 
-      <title>JavaScript - ${title}</title>
-      <script type="text/javascript" src="${resroot}/js/jQuery-1.4.2.js">//</script>
-      <link type="text/css" rel="stylesheet" href="${resroot}/css/layout.css"/>
-      <script type="text/javascript">
-        if (typeof console=="undefined") {
-          console={
-            log:function(A){var B=false;if(B){alert(A)}},
-            trace:function(A){var B=false;if(B){alert(A)}},
-            debug:function(A){var B=false;if(B){alert(A)}}
-          }
+    <title>JavaScript - ${title}</title>
+    <link rel="stylesheet" href="${resroot}/css/layout.css"/>
+    <script type="text/javascript" src="${resroot}/js/jQuery-1.4.2.js">//</script>
+    <script type="text/javascript">
+      if (typeof console=="undefined") {
+        console={
+          log:function(A){var B=false;if(B){alert(A)}},
+          trace:function(A){var B=false;if(B){alert(A)}},
+          debug:function(A){var B=false;if(B){alert(A)}}
         }
+    }
     </script>
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
 
   <body>
   <div id="side">
-    <div id="header">
+    <header>
       <h1>JavaScript er morro...</h1>
-    </div>
+    </header>
     <div id="body">
       <jsp:doBody/>
     </div>
-    <div id="footer">
+    <footer>
       Mesan JavaScript miniprosjekt
-    </div>
+    </footer>
   </div>
   </body>
   </html>
