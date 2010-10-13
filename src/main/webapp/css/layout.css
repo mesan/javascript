@@ -3,3 +3,14 @@ footer,header,hgroup,menu,nav,section {
     display:block;
 }
 
+table.saker {
+  border: 1px solid gray;
+}
+
+table.saker th {
+  border: 1px solid gray;
+}
+
+table.saker td {
+  border: 1px solid gray;
+}

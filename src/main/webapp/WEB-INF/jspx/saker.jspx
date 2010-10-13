@@ -9,10 +9,26 @@
 
   <jsp:directive.page contentType="text/html;charset=utf-8"/>
 
-  <l:standard title="Test...">
-    Test content...
+  <l:standard title="Saker">
+    <h2>Saker</h2>
 
-    <p><a href="sak">Saker</a></p>
+    <table class="saker">
+      <tr>
+        <th>ID</th>
+        <th>Tittel</th>
+        <th>Beskrivelse</th>
+        <th>Status</th>
+      </tr>
+
+      <c:forEach items="${saker}" var="sak">
+        <tr>
+          <td>${sak.id}</td>
+          <td>${sak.tittel}</td>
+          <td>${sak.beskrivelse}</td>
+          <td>${sak.sakStatus}</td>
+        </tr>
+      </c:forEach>
+    </table>
   </l:standard>
 
 </jsp:root>
