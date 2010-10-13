@@ -18,6 +18,7 @@
         <th>Tittel</th>
         <th>Beskrivelse</th>
         <th>Status</th>
+        <th style="width: 120px;">Operasjoner</th>
       </tr>
 
       <c:forEach items="${saker}" var="sak">
@@ -26,9 +27,17 @@
           <td>${sak.tittel}</td>
           <td>${sak.beskrivelse}</td>
           <td>${sak.sakStatus}</td>
+          <td>
+            <input type="button" value="Rediger"/>&#160;
+            <input type="button" value="Slett"/>
+          </td>
         </tr>
       </c:forEach>
     </table>
+
+    <div>
+      <input type="submit" value="Opprett ny sak" class="flytHoyre"/>
+    </div>
   </l:standard>
 
 </jsp:root>
