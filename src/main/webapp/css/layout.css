@@ -1,8 +1,3 @@
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section {
-    display:block;
-}
-
 table.saker {
   border: 1px solid gray;
 }
