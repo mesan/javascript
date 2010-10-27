@@ -23,13 +23,13 @@
 
       <c:forEach items="${saker}" var="sak">
         <tr>
-          <td>${sak.id}</td>
-          <td>${sak.tittel}</td>
-          <td>${sak.beskrivelse}</td>
-          <td>${sak.sakStatus}</td>
+          <td id="id_${sak.id}">${sak.id}</td>
+          <td id="tittel_${sak.id}">${sak.tittel}</td>
+          <td id="beskrivelse_${sak.id}">${sak.beskrivelse}</td>
+          <td id="sakStatus_${sak.id}">${sak.sakStatus}</td>
           <td>
-            <input type="button" value="Rediger"/>&#160;
-            <input type="button" value="Slett"/>
+            <input id="rediger_${sak.id}" type="button" value="Rediger"/>&#160;
+            <input id="slett_${sak.id}" class="slettKnapp" type="button" value="Slett"/>
           </td>
         </tr>
       </c:forEach>
@@ -38,6 +38,26 @@
     <div>
       <input type="submit" value="Opprett ny sak" class="flytHoyre"/>
     </div>
+
+    <script type="text/javascript">
+      jQuery(document).ready(function() {
+        registrerSlettSakKnapp();
+      });
+
+      function registrerSlettSakKnapp() {
+        jQuery(".slettKnapp").click(function() {
+          var id = finnId(jQuery(this));
+          var tittel = jQuery("#tittel_" + id);
+          alert("Sletter sak " + id + " med tittel " + tittel.text());
+          // TODO implementere slett, og gjøre testbar
+        });
+      }
+
+      function finnId(felt) {
+        var id = jQuery(felt).attr("id");
+        return id.match(/\d/, "");
+      }
+    </script>
   </l:standard>
 
 </jsp:root>
