@@ -55,7 +55,7 @@
 
       function finnId(felt) {
         var id = jQuery(felt).attr("id");
-        return id.match(/\d/, "");
+        return id.match(/\d/);
       }
     </script>
   </l:standard>
