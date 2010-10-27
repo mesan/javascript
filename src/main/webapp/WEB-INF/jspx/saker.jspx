@@ -46,11 +46,15 @@
 
       function registrerSlettSakKnapp() {
         jQuery(".slettKnapp").click(function() {
-          var id = finnId(jQuery(this));
-          var tittel = jQuery("#tittel_" + id);
-          alert("Sletter sak " + id + " med tittel " + tittel.text());
-          // TODO implementere slett, og gjøre testbar
+          slettSak(jQuery(this));
         });
+      }
+
+      // TODO implementere slett, og gjøre testbar
+      function slettSak(slettKnapp) {
+        var id = finnId(slettKnapp);
+        var tittel = jQuery("#tittel_" + id).text();
+        alert("Sletter sak " + id + " med tittel " + tittel);
       }
 
       function finnId(felt) {
