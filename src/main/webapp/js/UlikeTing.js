@@ -12,6 +12,21 @@ Funksjoner.finnId = function(felt) {
   return id.match(/\d+/);
 }
 
+Funksjoner.finnNesteId = function(tabell) {
+  var rader = jQuery(tabell + " tr");
+  var hoyesteId = 0;
+
+  rader.each(function() {
+    var id = parseInt(Funksjoner.finnId(this));
+
+    if (id > hoyesteId) {
+      hoyesteId = id;
+    }
+  });
+
+  return hoyesteId +1;
+}
+
 Funksjoner.opprettNyTomSak = function(tabell) {
   jQuery(tabell).append(
     "<tr id='rad_1'>" +

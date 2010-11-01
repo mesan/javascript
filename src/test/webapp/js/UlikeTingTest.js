@@ -63,5 +63,32 @@ TestCase("UlikeTingTest", {
     assertTrue("Rediger skal ha riktig klasse", rediger.hasClass("redigerKnapp"));
     assertEquals("Rediger skal ha riktig type", "button", rediger.attr("type"));
     assertEquals("Rediger skal ha riktig tekst", "Rediger", rediger.val());
+  },
+
+  "test finnNesteId skal finne 1 dersom tom tabell": function() {
+    /*:DOC += <table id="tabell"></table> */
+    assertEquals(0, jQuery("#tabell tr").size());
+
+    var nesteId = Funksjoner.finnNesteId("#tabell");
+
+    assertEquals(1, nesteId);
+  },
+
+  "test finnNesteId skal pluss på 1 etter forrige id": function() {
+    /*:DOC += <table id="tabell"><tr id='rad_1'/></table> */
+    assertEquals(1, jQuery("#tabell tr").size());
+
+    var nesteId = Funksjoner.finnNesteId("#tabell");
+
+    assertEquals(2, nesteId);
+  },
+
+  "test finnNesteId skal takle tilfeldig rekkefølge": function() {
+    /*:DOC += <table id="tabell"><tr id='rad_1'/><tr id='rad_5'/><tr id='rad_2'/></table> */
+    assertEquals(3, jQuery("#tabell tr").size());
+
+    var nesteId = Funksjoner.finnNesteId("#tabell");
+
+    assertEquals(6, nesteId);
   }
 });
