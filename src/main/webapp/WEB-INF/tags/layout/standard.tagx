@@ -33,6 +33,7 @@
     <![endif]-->
     <link rel="stylesheet" href="${resroot}/css/layout.css"/>
     <script type="text/javascript" src="${resroot}/js/jQuery-1.4.2.js">//</script>
+    <script type="text/javascript" src="${resroot}/js/UlikeTing.js">//</script>
     <script type="text/javascript">
       if (typeof console=="undefined") {
         console={

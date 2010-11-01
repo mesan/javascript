@@ -50,7 +50,7 @@
           slettSak(jQuery(this));
         });
       }
-      
+
       function registrerRedigerSakKnapp() {
         jQuery(".redigerKnapp").click(function(){
           redigerSak(jQuery(this));
@@ -59,21 +59,16 @@
 
       // TODO implementere slett, og gjøre testbar
       function slettSak(slettKnapp) {
-        var id = finnId(slettKnapp);
+        var id = Funksjoner.finnId(slettKnapp);
         var tittel = jQuery("#tittel_" + id).text();
         alert("Sletter sak " + id + " med tittel " + tittel);
         jQuery("#rad_" + id).remove();
       }
-      
+
       function redigerSak(knapp){
-    	  var id = finnId(knapp);
+    	  var id = Funksjoner.finnId(knapp);
     	  alert("Rediger");
 	  }
-
-      function finnId(felt) {
-        var id = jQuery(felt).attr("id");
-        return id.match(/\d/);
-      }
     </script>
   </l:standard>
 
