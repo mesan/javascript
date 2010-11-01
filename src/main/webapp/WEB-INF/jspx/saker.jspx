@@ -27,7 +27,7 @@
           <td id="tittel_${sak.id}">${sak.tittel}</td>
           <td id="beskrivelse_${sak.id}">${sak.beskrivelse}</td>
           <td id="sakStatus_${sak.id}">${sak.sakStatus}</td>
-          <td>
+          <td id="operasjoner_${sak.id}">
             <input id="rediger_${sak.id}" class="redigerKnapp" type="button" value="Rediger"/>&#160;
             <input id="slett_${sak.id}" class="slettKnapp" type="button" value="Slett"/>
           </td>
@@ -36,14 +36,21 @@
     </table>
 
     <div>
-      <input type="submit" value="Opprett ny sak" class="flytHoyre"/>
+      <input id="opprettNyTomSak" type="submit" value="Opprett ny sak" class="flytHoyre"/>
     </div>
 
     <script type="text/javascript">
       jQuery(document).ready(function() {
         registrerSlettSakKnapp();
         registrerRedigerSakKnapp();
+        registrerOpprettNyTomSakKnapp();
       });
+
+      function registrerOpprettNyTomSakKnapp() {
+        jQuery("#opprettNyTomSak").click(function() {
+          Funksjoner.opprettNyTomSak(".saker");
+        });
+      }
 
       function registrerSlettSakKnapp() {
         jQuery(".slettKnapp").click(function() {
