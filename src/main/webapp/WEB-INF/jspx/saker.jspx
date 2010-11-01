@@ -53,13 +53,13 @@
       }
 
       function registrerSlettSakKnapp() {
-        jQuery(".slettKnapp").click(function() {
+        jQuery(".slettKnapp").live("click", function() {
           slettSak(jQuery(this));
         });
       }
 
       function registrerRedigerSakKnapp() {
-        jQuery(".redigerKnapp").click(function(){
+        jQuery(".redigerKnapp").live("click", function(){
           redigerSak(jQuery(this));
         });
       }
