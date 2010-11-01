@@ -74,8 +74,27 @@
 
       function redigerSak(knapp){
     	  var id = Funksjoner.finnId(knapp);
-    	  alert("Rediger");
+    	  var $editable = jQuery("#tittel_" + id);
+    	  var contents = $.trim($editable.html());
+    	  var editElement = '<input type="text" />';
+    	  jQuery(editElement)
+    	  	.val(contents)
+    	  	.appendTo($editable)
+    	  	.focus()
+    	  	.blur(function(e) {
+    	  		$editable.trigger('blur');
+    	  		bytt($editable, this);
+    	  	});
 	  }
+      
+      function bytt(element, editElement){
+//  		alert("test");
+		var content = editElement.value;
+		element
+		.contents()
+		.replaceWith(content);
+      }
+      
     </script>
   </l:standard>
 
