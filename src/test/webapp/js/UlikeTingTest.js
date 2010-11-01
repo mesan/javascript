@@ -5,12 +5,12 @@ TestCase("UlikeTingTest", {
   },
 
   "test skal finne id 87 for rediger knapp": function() {
-    /*:DOC knapp = <input id="rediger_87" type="button"/>&#160;*/
+    /*:DOC knapp = <input id="rediger_87" type="button"/> */
     assertEquals(87, Funksjoner.finnId(this.knapp));
   },
 
   "test skal finne id 5 for slett knapp": function() {
-    /*:DOC knapp = <input id="slett_5" type="button"/>&#160;*/
+    /*:DOC knapp = <input id="slett_5" type="button"/> */
     assertEquals(5, Funksjoner.finnId(this.knapp));
   }
 });
