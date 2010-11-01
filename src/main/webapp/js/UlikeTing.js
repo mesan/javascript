@@ -28,15 +28,17 @@ Funksjoner.finnNesteId = function(tabell) {
 }
 
 Funksjoner.opprettNyTomSak = function(tabell) {
+  var nesteId = Funksjoner.finnNesteId(tabell);
+
   jQuery(tabell).append(
-    "<tr id='rad_1'>" +
-      "<td id='id_1'>1</td>" +
-      "<td id='tittel_1'></td>" +
-      "<td id='beskrivelse_1'></td>" +
-      "<td id='sakStatus_1'>NY</td>" +
-      "<td id='operasjoner_1'>" +
-        "<input id='rediger_1' class='redigerKnapp' type='button' value='Rediger'/>&#160;&#160;" +
-        "<input id='slett_1' class='slettKnapp' type='button' value='Slett'/>" +
+    "<tr id='rad_" + nesteId + "'>" +
+      "<td id='id_" + nesteId + "'>" + nesteId + "</td>" +
+      "<td id='tittel_" + nesteId + "'></td>" +
+      "<td id='beskrivelse_" + nesteId + "'></td>" +
+      "<td id='sakStatus_" + nesteId + "'>NY</td>" +
+      "<td id='operasjoner_" + nesteId + "'>" +
+        "<input id='rediger_" + nesteId + "' class='redigerKnapp' type='button' value='Rediger'/>&#160;&#160;" +
+        "<input id='slett_" + nesteId + "' class='slettKnapp' type='button' value='Slett'/>" +
       "</td>" +
     "</tr>"
   );

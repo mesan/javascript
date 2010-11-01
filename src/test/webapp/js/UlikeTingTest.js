@@ -65,6 +65,25 @@ TestCase("UlikeTingTest", {
     assertEquals("Rediger skal ha riktig tekst", "Rediger", rediger.val());
   },
 
+  "test opprettNySak skal takle flere nye rader": function() {
+    /*:DOC += <table id="tabell"></table> */
+    assertEquals(0, jQuery("#tabell tr").size());
+
+    Funksjoner.opprettNyTomSak("#tabell");
+    Funksjoner.opprettNyTomSak("#tabell");
+
+    assertEquals("Skal lage 1 ny rad", 2, jQuery("#tabell tr").size());
+    assertEquals("Skal lage rad med id", 1, jQuery("#tabell #rad_2").size());
+    assertEquals("Skal lage 5 kolonner", 5, jQuery("#tabell #rad_2 td").size());
+    assertEquals("Skal lage id kolonne", 1, jQuery("#tabell #rad_2 #id_2").size());
+    assertEquals("Skal lage tittel kolonne", 1, jQuery("#tabell #rad_2 #tittel_2").size());
+    assertEquals("Skal lage beskrivelse kolonne", 1, jQuery("#tabell #rad_2 #beskrivelse_2").size());
+    assertEquals("Skal lage sakStatus kolonne", 1, jQuery("#tabell #rad_2 #sakStatus_2").size());
+    assertEquals("Skal lage rediger knapp i operasjoner kolonne", 1, jQuery("#tabell #rad_2 #operasjoner_2 #rediger_2").size());
+    assertEquals("Skal lage slett knapp i operasjoner kolonne", 1, jQuery("#tabell #rad_2 #operasjoner_2 #slett_2").size());
+    assertEquals("2", jQuery("#tabell #rad_2 #id_2").text());
+  },
+
   "test finnNesteId skal finne 1 dersom tom tabell": function() {
     /*:DOC += <table id="tabell"></table> */
     assertEquals(0, jQuery("#tabell tr").size());
