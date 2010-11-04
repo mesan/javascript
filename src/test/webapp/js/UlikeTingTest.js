@@ -109,5 +109,94 @@ TestCase("UlikeTingTest", {
     var nesteId = Funksjoner.finnNesteId("#tabell");
 
     assertEquals(6, nesteId);
+  },
+  
+  "test slettRad skal slette raden med gitt id": function() {
+	/*:DOC += <table id="tabell"><tr id='rad_1'/></table> */
+    assertEquals(1, jQuery('#rad_1').size());
+    
+    Funksjoner.slettRad('#rad_1');
+    
+    assertEquals(0, jQuery('#tabell tr').size());    
+  },
+  
+  "test redigerSak skal åpne felter for redigering": function() {
+    /*:DOC += <table id="tabell">
+	 *  <tr id='sak_1'>
+	 *    <td id='felt_1'><input type="text" disabled="disabled"/></td>
+	 *  </tr>
+	 *</table> */
+	 Funksjoner.redigerSak(1);
+	 assertEquals(0, jQuery('input:text[disabled]').size());	  
+  },
+  
+  "test finnEditfelter skal finne 3 editerbare felter": function() {
+    /*:DOC += <table id="tabell">
+     *  <tr id='sak_1'>
+     *    <td id='felt_1'><input type="text"/></td>
+     *    <td id='felt_2'><input type="text"/></td>
+     *    <td id='felt_3'><input type="text"/></td>
+     *  </tr>
+     *</table> */  
+	 assertEquals(3, Funksjoner.finnEditfelter(1).size());
+  },
+  
+  "test finnEditFelter skal ignorere felt som ikke er editerbare": function(){
+    /*:DOC += <table id="tabell">
+	 *  <tr id='sak_1'>
+	 *    <td id='felt_1'><input type="text"/></td>
+	 *    <td id='felt_2'><input type="button"/></td>
+	 *    <td id='felt_3'><input type="text"/></td>
+	 *  </tr>
+	 *</table> */
+	 assertEquals(2, Funksjoner.finnEditfelter(1).size());
+  },  
+	  
+  "test finnEditFelter skal kun finne rad med gitt id": function(){
+    /*:DOC += <table id="tabell">
+	 *  <tr id='sak_1'>
+	 *    <td id='felt_1'><input type="text"/></td>
+	 *  </tr>
+	 *  <tr id='sak_2'> 
+	 *    <td id='felt_2'><input type="text"/></td>
+	 *  </tr>
+	 *</table> */
+	 assertEquals(1, Funksjoner.finnEditfelter(1).size());
+  },
+  
+  "test enableFelter skal enable gitte felter": function(){
+    /*:DOC += <table id="tabell">
+     *  <tr id='sak_1'>
+     *    <td id='felt_1'><input type="text" disabled="disabled"/></td>
+     *  </tr>
+     *</table> */
+	 var felter = jQuery('input');
+	 Funksjoner.enableFelter(felter);
+     assertEquals(0, jQuery('input:text[disabled]').size());
+  },
+  
+  "test enableFelter skal ikke enable annet en den får beskjed om": function(){
+    /*:DOC += <table id="tabell">
+	 *  <tr id='sak_1'>
+	 *    <td id='felt_1'><input type="text" disabled="disabled"/></td>
+	 *    <td id='felt_2'><input type="button" disabled="disabled"/></td>
+	 *  </tr>
+	 *</table> */
+	 var felter = jQuery('input:text');
+	 Funksjoner.enableFelter(felter);
+	 assertEquals(1, jQuery('input:button[disabled]').size());
+  },
+  
+  "test disableFelter skal disable gitte felter": function(){
+    /*:DOC += <table id="tabell">
+	 *  <tr id='sak_1'>
+	 *    <td id='felt_1'><input type="text"/></td>
+	 *  </tr>
+	 *</table> */
+	 var felter = jQuery('input');
+	 Funksjoner.disableFelter(felter);
+	 assertEquals(1, jQuery('input:text[disabled]').size());    
   }
+	  
+  
 });

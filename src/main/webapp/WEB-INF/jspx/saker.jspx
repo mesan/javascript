@@ -22,14 +22,15 @@
       </tr>
 
       <c:forEach items="${saker}" var="sak">
-        <tr id="rad_${sak.id}">
-          <td id="id_${sak.id}">${sak.id}</td>
-          <td id="tittel_${sak.id}">${sak.tittel}</td>
-          <td id="beskrivelse_${sak.id}">${sak.beskrivelse}</td>
-          <td id="sakStatus_${sak.id}">${sak.sakStatus}</td>
+        <tr id="sak_${sak.id}">
+          <td id="id_${sak.id}"><input class="editable" type="text" value="${sak.id}" disabled="disabled"/></td>
+          <td id="tittel_${sak.id}"><input class="editable" type="text" value="${sak.tittel}" disabled="disabled"/></td>
+          <td id="beskrivelse_${sak.id}"><input class="editable" type="text" value="${sak.beskrivelse}" disabled="disabled"/></td>
+          <td id="sakStatus_${sak.id}"><input class="editable" type="text" value="${sak.sakStatus}" disabled="disabled"/></td>
           <td id="operasjoner_${sak.id}">
             <input id="rediger_${sak.id}" class="redigerKnapp" type="button" value="Rediger"/>&#160;
             <input id="slett_${sak.id}" class="slettKnapp" type="button" value="Slett"/>
+            <input id="lagre_${sak.id}" class="lagreKnapp" type="button" value="Lagre"/>
           </td>
         </tr>
       </c:forEach>
@@ -44,6 +45,7 @@
         registrerSlettSakKnapp();
         registrerRedigerSakKnapp();
         registrerOpprettNyTomSakKnapp();
+        registrerLagreSakKnapp();
       });
 
       function registrerOpprettNyTomSakKnapp() {
@@ -60,41 +62,34 @@
 
       function registrerRedigerSakKnapp() {
         jQuery(".redigerKnapp").live("click", function(){
-          redigerSak(jQuery(this));
+        	var knapp = jQuery(this);
+        	var id = Funksjoner.finnId(knapp);
+          Funksjoner.redigerSak(id);
+        });
+      }
+      
+      function registrerLagreSakKnapp() {
+        jQuery(".lagreKnapp").live("click", function(){
+          lagreSak(jQuery(this));
         });
       }
 
-      // TODO implementere slett, og gjøre testbar
+      // Sletter en sak
       function slettSak(slettKnapp) {
         var id = Funksjoner.finnId(slettKnapp);
         var tittel = jQuery("#tittel_" + id).text();
         alert("Sletter sak " + id + " med tittel " + tittel);
-        jQuery("#rad_" + id).remove();
+        Funksjoner.slettRad("#sak_" + id);
       }
-
-      function redigerSak(knapp){
+      
+      // Lagrer saken og disabler inputfeltene
+      function lagreSak(knapp){
     	  var id = Funksjoner.finnId(knapp);
-    	  var $editable = jQuery("#tittel_" + id);
-    	  var contents = $.trim($editable.html());
-    	  var editElement = '<input type="text" />';
-    	  jQuery(editElement)
-    	  	.val(contents)
-    	  	.appendTo($editable)
-    	  	.focus()
-    	  	.blur(function(e) {
-    	  		$editable.trigger('blur');
-    	  		bytt($editable, this);
-    	  	});
-	  }
-      
-      function bytt(element, editElement){
-//  		alert("test");
-		var content = editElement.value;
-		element
-		.contents()
-		.replaceWith(content);
-      }
-      
+		    var inputfelter = Funksjoner.finnEditfelter(id);		  
+        Funksjoner.disableFelter(inputfelter);
+    	  alert("Saken er oppdatert!");
+      }      
+   
     </script>
   </l:standard>
 

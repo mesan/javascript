@@ -10,6 +10,11 @@ table.saker td {
   border: 1px solid gray;
 }
 
+//funker ei
+input[type="text"] {
+  margin-left: 0px;
+}
+
 .flytHoyre {
   float: right;
 }

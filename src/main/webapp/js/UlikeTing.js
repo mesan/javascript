@@ -44,6 +44,31 @@ Funksjoner.opprettNyTomSak = function(tabell) {
   );
 }
 
+Funksjoner.slettRad = function(rad) {
+  jQuery(rad).remove();
+}
+
+Funksjoner.redigerSak = function(id) {
+  var inputfelter = Funksjoner.finnEditfelter(id);
+  Funksjoner.enableFelter(inputfelter);
+}
+
+// Finner editerbare inputfelter i en tabellrad
+Funksjoner.finnEditfelter = function (id){
+  // burde slå opp via klassen editable, men det får jeg ikke til :(
+  // Antar derfor at alle inputfelter av typen text er editerbare.
+  var editfelter = jQuery("#sak_" + id + " td input:text");
+  return editfelter;
+},
+
+Funksjoner.enableFelter = function(felter){
+  felter.removeAttr('disabled');
+},
+
+Funksjoner.disableFelter = function(felter){
+  felter.attr('disabled', 'disabled');
+}
+
 // Best practice nr 2 - ??
 
 // Best practice nr 3 - profit!
