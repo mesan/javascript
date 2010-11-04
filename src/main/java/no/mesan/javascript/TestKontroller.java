@@ -15,6 +15,6 @@ public class TestKontroller {
 
     @RequestMapping(method = RequestMethod.GET)
     public void test() {
-        System.out.println("test");
+
     }
 }
