@@ -26,7 +26,7 @@
       <tbody>
       <c:forEach items="${saker}" var="sak">
         <tr id="sak_${sak.id}">
-          <td id="id_${sak.id}"><input class="editable" type="text" value="${sak.id}" disabled="disabled"/></td>
+          <td id="id_${sak.id}">${sak.id}</td>
           <td id="tittel_${sak.id}"><input class="editable" type="text" value="${sak.tittel}" disabled="disabled"/></td>
           <td id="beskrivelse_${sak.id}"><input class="editable" type="text" value="${sak.beskrivelse}" disabled="disabled"/></td>
           <td id="sakStatus_${sak.id}"><input class="editable" type="text" value="${sak.sakStatus}" disabled="disabled"/></td>

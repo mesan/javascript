@@ -31,17 +31,25 @@ Funksjoner.opprettNyTomSak = function(tabell) {
   var nesteId = Funksjoner.finnNesteId(tabell);
 
   jQuery(tabell).append(
-    "<tr id='rad_" + nesteId + "'>" +
+    "<tr id='sak_" + nesteId + "'>" +
       "<td id='id_" + nesteId + "'>" + nesteId + "</td>" +
-      "<td id='tittel_" + nesteId + "'></td>" +
-      "<td id='beskrivelse_" + nesteId + "'></td>" +
-      "<td id='sakStatus_" + nesteId + "'>NY</td>" +
+      "<td id='tittel_" + nesteId + "'>" +
+      	"<input class='editable' type='text'/>" +
+      "</td>" +
+      "<td id='beskrivelse_" + nesteId + "'>" +
+      	"<input class='editable' type='text'/>" +
+      "</td>" +
+      "<td id='sakStatus_" + nesteId + "'>" +
+      	"<input class='editable' type='text' value='NY'/>" +
+      "</td>" +
       "<td id='operasjoner_" + nesteId + "'>" +
         "<input id='rediger_" + nesteId + "' class='redigerKnapp' type='button' value='Rediger'/>&#160;&#160;" +
         "<input id='slett_" + nesteId + "' class='slettKnapp' type='button' value='Slett'/>" +
+        "<input id='lagre_" + nesteId + "' class='lagreKnapp' type='button' value='Lagre'/>" +
       "</td>" +
     "</tr>"
   );
+  var test = 1;
 }
 
 Funksjoner.slettRad = function(rad) {
