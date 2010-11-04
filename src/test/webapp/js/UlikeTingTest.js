@@ -120,7 +120,7 @@ TestCase("UlikeTingTest", {
     assertEquals(0, jQuery('#tabell tr').size());    
   },
   
-  "test redigerSak skal åpne felter for redigering": function() {
+  "test redigerSak skal ï¿½pne felter for redigering": function() {
     /*:DOC += <table id="tabell">
 	 *  <tr id='sak_1'>
 	 *    <td id='felt_1'><input type="text" disabled="disabled"/></td>
@@ -175,7 +175,7 @@ TestCase("UlikeTingTest", {
      assertEquals(0, jQuery('input:text[disabled]').size());
   },
   
-  "test enableFelter skal ikke enable annet en den får beskjed om": function(){
+  "test enableFelter skal ikke enable annet en den fÃ¥r beskjed om": function(){
     /*:DOC += <table id="tabell">
 	 *  <tr id='sak_1'>
 	 *    <td id='felt_1'><input type="text" disabled="disabled"/></td>

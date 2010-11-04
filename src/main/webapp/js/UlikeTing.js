@@ -55,7 +55,7 @@ Funksjoner.redigerSak = function(id) {
 
 // Finner editerbare inputfelter i en tabellrad
 Funksjoner.finnEditfelter = function (id){
-  // burde slå opp via klassen editable, men det får jeg ikke til :(
+  // burde slÃ¥opp via klassen editable, men det fÃ¥r jeg ikke til :(
   // Antar derfor at alle inputfelter av typen text er editerbare.
   var editfelter = jQuery("#sak_" + id + " td input:text");
   return editfelter;
