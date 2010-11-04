@@ -22,16 +22,14 @@ public final class JettyStarter {
 
     private static Server SERVER;
 
-    private JettyStarter() {
+    public JettyStarter() {
 
     }
 
-    @SuppressWarnings({ "unchecked" })
-    public static void main(final String[] args) throws Exception {
-
+    public void start(final int port) throws Exception {
         SERVER = new Server();
         final Connector connector = new SelectChannelConnector();
-        connector.setPort(8080);
+        connector.setPort(port);
         SERVER.setConnectors(new Connector[] { connector });
 
         final WebAppContext context = new WebAppContext();
@@ -44,6 +42,16 @@ public final class JettyStarter {
 
         SERVER.addHandler(context);
         SERVER.start();
-        SERVER.join();
+//        SERVER.join();
+    }
+
+    @SuppressWarnings({ "unchecked" })
+    public static void main(final String[] args) throws Exception {
+        final JettyStarter starter = new JettyStarter();
+        starter.start(8080);
+    }
+
+    public void stop() throws Exception {
+        SERVER.stop();
     }
 }
