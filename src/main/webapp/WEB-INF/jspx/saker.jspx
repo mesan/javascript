@@ -19,7 +19,7 @@
         <th>Tittel</th>
         <th>Beskrivelse</th>
         <th>Status</th>
-        <th style="width: 120px;">Operasjoner</th>
+        <th style="width: 170px;">Operasjoner</th>
       </tr>
       </thead>
 
@@ -71,7 +71,7 @@
           Funksjoner.redigerSak(id);
         });
       }
-      
+
       function registrerLagreSakKnapp() {
         jQuery(".lagreKnapp").live("click", function(){
           lagreSak(jQuery(this));
@@ -85,15 +85,15 @@
         alert("Sletter sak " + id + " med tittel " + tittel);
         Funksjoner.slettRad("#sak_" + id);
       }
-      
+
       // Lagrer saken og disabler inputfeltene
       function lagreSak(knapp){
     	  var id = Funksjoner.finnId(knapp);
-		    var inputfelter = Funksjoner.finnEditfelter(id);		  
+		    var inputfelter = Funksjoner.finnEditfelter(id);
         Funksjoner.disableFelter(inputfelter);
     	  alert("Saken er oppdatert!");
-      }      
-   
+      }
+
     </script>
   </l:standard>
 
