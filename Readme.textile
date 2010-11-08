@@ -1,3 +1,6 @@
 h1. JavaScript miniprosjekt
 
 Et lite internprosjekt for å teste morsomheter med javascript, testbarhet, TDD og etablere noe best-practices.
+
+:)
+
