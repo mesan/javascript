@@ -1,6 +1,10 @@
 /javascript-testing.iml
 /javascript-testing.ipr
 /javascript-testing.iws
-/target
 /.idea
 *.iml
+/.classpath
+/target
+/.settings
+/.manager
+/.scala_dependencies
