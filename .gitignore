@@ -1,8 +1,7 @@
-/javascript-testing.iml
-/javascript-testing.ipr
-/javascript-testing.iws
+/*.iml
+/*.ipr
+/*.iws
 /.idea
-*.iml
 /.classpath
 /target
 /.settings
