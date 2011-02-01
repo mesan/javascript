@@ -3,6 +3,7 @@
 /*.iws
 /.idea
 /.classpath
+/.project
 /target/
 /.settings/
 /.manager/
