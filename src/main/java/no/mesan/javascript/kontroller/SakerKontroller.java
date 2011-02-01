@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import no.mesan.javascript.Ape;
 import no.mesan.javascript.domene.Sak;
 import no.mesan.javascript.domene.SakStatus;
 
@@ -34,15 +35,19 @@ public class SakerKontroller {
         return saker;
     }
 
-    private void leggSakerISesjonenHvisDeMangler(HttpSession sesjon) {
+    private void leggSakerISesjonenHvisDeMangler(final HttpSession sesjon) {
         if (sesjon.getAttribute(SAKER_ATTRIBUTT) == null) {
             sesjon.setAttribute(SAKER_ATTRIBUTT, lagOriginaleSaker());
         }
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public String visSide(HttpSession sesjon) {
+    public String visSide(final HttpSession sesjon) {
         leggSakerISesjonenHvisDeMangler(sesjon);
+
+        final Ape ape = new Ape();
+        ape.hopp(6);
+
         return "saker";
     }
 }
