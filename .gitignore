@@ -3,7 +3,8 @@
 /*.iws
 /.idea
 /.classpath
-/target
-/.settings
-/.manager
+/.project
+/target/
+/.settings/
+/.manager/
 /.scala_dependencies
