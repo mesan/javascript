@@ -51,13 +51,13 @@
   <body>
     <div id="side" class="container">
       <header>
-        <h1>JavaScript er morro...</h1>
+        <h1>JavaScript er moro...</h1>
       </header>
       <div id="body">
         <jsp:doBody/>
       </div>
       <footer>
-        Mesan JavaScript miniprosjekt
+        Mesan Scala+Java miniprosjekt
       </footer>
     </div>
   </body>
