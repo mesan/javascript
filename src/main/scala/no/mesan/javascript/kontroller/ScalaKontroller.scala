@@ -18,7 +18,7 @@ class ScalaKontroller {
   var ape: Ape = _;
 
   @RequestMapping(method = Array(RequestMethod.GET))
-  def visSide() {
+  def visSide() = {
     ape.hopp(3)
     println("")
     "scala"
